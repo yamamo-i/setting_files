@@ -11,7 +11,7 @@ SAVEHIST=3000
 # End of lines configured by zsh-newuser-install
 
 #PS1="[@${HOST%%.*} %1~]%(!.#.$) "
-#PS1="{${fg[blue][${USER}@${HOST%%.*} %1~]}%(!.#.$) " # Linux bash‚Æ“¯‚¶Œ`Ž®
+#PS1="{${fg[blue][${USER}@${HOST%%.*} %1~]}%(!.#.$) " # Linux bashâ€šÃ†â€œÂ¯â€šÂ¶Å’`Å½Â®
 #RPROMPT="{fg[green]}%~% %T"
 PROMPT="%(?!%F{green}^-^!%F{red}@_@) %f[%F{magenta}%B%n%b%f@%F{cyan}%U%m%u%f %~]# "
 RPROMPT='[%F{green}%d%f %T]'
@@ -35,4 +35,4 @@ cdls ()
     \cd "$@" && ls
 }
 alias cd="cdls"
-
+alias tmux='tmux -u'
