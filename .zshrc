@@ -1,11 +1,21 @@
-autoload -U compinit
-compinit
+autoload -U compini
+
+# dummy commit
+alias dummy='(){ git checkout -b $1 && touch dummy.txt && git add dummy.txt && git commit -m"$1 dummy coomit." && git push origin $1 && git checkout master && git branch -D $1 }'
+
+# emergency command
+alias yabai="git add --all; git commit -m'emergency commit'; git branch | grep '*' | cut -d' ' -f2 | xargs git push origin "
 
 # tmuxの起動
 alias tmux='tmux -u'
 
-# grep color
+# todoの調査
+alias todo='grep -ri todo'
+
+# color
 alias grep='grep --color=auto'
+export LESS='-R'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -44,4 +54,11 @@ cdls ()
     \cd "$@" && ls
 }
 alias cd="cdls"
+
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
+# kubectl completion
+source <(kubectl completion zsh)
 
